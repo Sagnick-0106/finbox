@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    image: app:finbox
+    container_name: finbox-up
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: finbox_db
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    container_name: adminer
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfile.celery  # Use the Dockerfile.celery you created for Celery
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    container_name: redis

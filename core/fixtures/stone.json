@@ -1,0 +1,44 @@
+[
+{
+    "model": "core.stone",
+    "pk": 1,
+    "fields": {
+        "Stone_Name": "Power Stone"
+    }
+},
+{
+    "model": "core.stone",
+    "pk": 2,
+    "fields": {
+        "Stone_Name": "Space Stone"
+    }
+},
+{
+    "model": "core.stone",
+    "pk": 3,
+    "fields": {
+        "Stone_Name": "Reality Stone"
+    }
+},
+{
+    "model": "core.stone",
+    "pk": 4,
+    "fields": {
+        "Stone_Name": "Soul Stone"
+    }
+},
+{
+    "model": "core.stone",
+    "pk": 5,
+    "fields": {
+        "Stone_Name": "Time Stone"
+    }
+},
+{
+    "model": "core.stone",
+    "pk": 6,
+    "fields": {
+        "Stone_Name": "Mind Stone"
+    }
+}
+]

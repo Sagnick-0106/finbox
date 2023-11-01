@@ -1,0 +1,9 @@
+docker-compose build
+docker compose up
+
+# Inside container
+docker exec -it finbox-up /bin/bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py loaddata core/fixtures/stone.json
+exit
